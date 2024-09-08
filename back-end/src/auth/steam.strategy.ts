@@ -6,8 +6,8 @@ import { Strategy } from 'passport-steam';
 export class SteamStrategy extends PassportStrategy(Strategy, 'steam') {
   constructor() {
     super({
-      returnURL: 'http://localhost:3333/auth/steam/return',
-      realm: 'http://localhost:3333/',
+      returnURL: `${process.env.BASE_URL_BACK}/auth/steam/return`,
+      realm: `${process.env.BASE_URL_BACK}/`,
       apiKey: process.env.STEAM_API_KEY,
     });
   }
